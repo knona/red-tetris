@@ -1,0 +1,23 @@
+{
+  "name": "red-tetris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run client-install && npm run client-build && npm run server-install && npm run server-start",
+    "client-install": "npm i --prefix client",
+    "client-build": "npm run build --prefix client",
+    "server-install": "npm i --prefix server",
+    "server-start": "npm start --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knona/red-tetris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knona/red-tetris/issues"
+  },
+  "homepage": "https://github.com/knona/red-tetris#readme"
+}
