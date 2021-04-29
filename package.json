@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run client-install && npm run client-build && npm run server-install && npm run server-start",
+    "start": "npm run client-install && npm run client-build && npm run server-install && npm run server-build && npm run server-start",
     "client-install": "npm i --prefix client",
     "client-build": "npm run build --prefix client",
     "server-install": "npm i --prefix server",
-    "server-start": "npm start --prefix server"
+    "server-build": "npm run build --prefix server",
+    "server-start": "npm run start:prod --prefix server"
   },
   "repository": {
     "type": "git",
