@@ -1,0 +1,46 @@
+@import url('../../css/variables.css');
+
+.room_page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room_container {
+  width: 100%;
+  height: 100vh;
+  max-height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.room {
+  max-height: 100vh;
+
+  padding: 16px;
+
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.player_list {
+  max-width: 400px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.commands {
+  width: 250px;
+  margin-left: 16px;
+}

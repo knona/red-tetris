@@ -1,0 +1,8 @@
+@import url('../../../css/variables.css');
+
+.empty_row {
+  height: 32px;
+
+  background-color: var(--dark-blue-color);
+  opacity: 0.2;
+}

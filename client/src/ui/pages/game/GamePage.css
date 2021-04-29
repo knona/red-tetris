@@ -1,0 +1,33 @@
+.game_container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game_layout {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+
+  height: calc(100vmin - 32px);
+  min-height: 500px;
+  max-height: 700px;
+
+  display: grid;
+  grid-gap: 8px;
+  grid-template-areas:
+    '.   sc sc .  '
+    'hd  pg pg qe '
+    'og0 pg pg og2'
+    'og0 pg pg og2'
+    'og1 pg pg og3'
+    'og1 pg pg og3';
+  grid-template-rows: min-content min-content repeat(4, 1fr);
+}
+
+.game_layout .tetris_grid {
+  height: 100%;
+}

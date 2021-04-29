@@ -1,0 +1,65 @@
+@import url('../../../../../css/variables.css');
+
+.leaderboard_row {
+  padding: 8px 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  background-color: var(--dark-blue-color);
+}
+
+.leaderboard_row .position_container {
+  position: relative;
+
+  width: 50px;
+  height: 50px;
+}
+
+.leaderboard_row .position_container img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.leaderboard_row .position_container h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0px;
+  margin-top: 3px;
+  padding: 0px;
+
+  color: white;
+  font-family: Funky;
+  font-size: 32px;
+  opacity: 1;
+}
+
+.leaderboard_row .username {
+  margin-left: 16px;
+
+  flex-grow: 1;
+}
+
+.leaderboard_row .username h2 {
+  color: white;
+  font-size: 22px;
+}
+
+.leaderboard_row .username h3 {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 12px;
+}
+
+.leaderboard_row .username .spacer {
+  height: 8px;
+}

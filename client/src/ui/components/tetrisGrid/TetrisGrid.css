@@ -1,0 +1,48 @@
+@import url('../../css/variables.css');
+
+.tetris_grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+
+  background-color: var(--light-white-color);
+  border: var(--view-border);
+  box-sizing: border-box;
+}
+
+.tetris_grid_cell {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.tetris_grid .overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+}
+
+.tetris_grid .empty_player {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tetris_grid .game_over {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--red-color);
+
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: var(--dark-blue-color) -3px 3px;
+}
+
+.tetris_grid .game_over h2 {
+  font-size: 40px;
+}

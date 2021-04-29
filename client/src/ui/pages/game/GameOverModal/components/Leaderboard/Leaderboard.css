@@ -1,0 +1,22 @@
+@import url('../../../../../css/variables.css');
+
+.leaderboard {
+  background-color: var(--light-white-color);
+  border: var(--view-border);
+}
+
+.leaderboard .scroll_view {
+  max-height: 250px;
+  padding: 8px;
+}
+
+.leaderboard .spacer {
+  height: 4px;
+}
+
+.leaderboard .empty_leaderboard_row {
+  height: 70px;
+
+  background-color: var(--dark-blue-color);
+  opacity: 0.4;
+}

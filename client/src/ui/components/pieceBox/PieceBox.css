@@ -1,0 +1,38 @@
+.piece_box {
+  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: var(--light-white-color);
+  border: var(--view-border);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.piece_box .title h2 {
+  padding-top: 4px;
+
+  color: var(--dark-blue-color);
+  font-size: 15px;
+}
+
+.piece_box .grids {
+  position: relative;
+}
+
+.piece_box .placeholder_grid {
+  display: grid;
+  grid-template-rows: repeat(2, 13px);
+  grid-template-columns: repeat(4, 13px);
+}
+
+.piece_box .piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+}

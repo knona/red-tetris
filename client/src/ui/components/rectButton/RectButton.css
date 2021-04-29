@@ -1,0 +1,48 @@
+@import url('../../css/variables.css');
+
+.rect_button {
+  margin-left: 4px;
+  margin-bottom: 4px;
+  padding: 10px 12px 8px 12px;
+
+  color: white;
+  font-family: Pixel;
+  font-size: 16px;
+
+  background-color: var(--dark-blue-color);
+  border: none;
+  box-shadow: var(--control-shadow);
+}
+
+.secondary {
+  padding: 8px 12px 6px 12px;
+  color: var(--dark-blue);
+  background-color: var(--yellow-color);
+  border: var(--control-border);
+}
+
+.destructive {
+  color: white;
+  background-color: var(--red-color);
+  border: none;
+}
+
+.confirm {
+  color: white;
+  background-color: var(--green-color);
+  border: none;
+}
+
+.rect_button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.rect_button:active {
+  position: relative;
+  top: 2px;
+  right: 2px;
+
+  opacity: 1;
+  box-shadow: none;
+}

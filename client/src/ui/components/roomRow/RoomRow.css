@@ -1,0 +1,78 @@
+@import url('../../css/variables.css');
+@import url('../../css/animation.css');
+
+.room_row_container {
+  padding-left: 4px;
+  padding-bottom: 4px;
+}
+
+.room_row {
+  width: 100%;
+
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: white;
+  font-family: Pixel;
+  background-color: var(--dark-blue-color);
+  border: none;
+  box-shadow: var(--control-shadow);
+}
+
+.room_row h2 {
+  margin-bottom: 8px;
+
+  text-align: left;
+  word-break: break-all;
+}
+
+.room_row h3 {
+  margin: 0px;
+
+  align-self: flex-end;
+
+  font-size: 11px;
+}
+
+.room_row .infos {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.room_row .infos .in_game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.room_row .infos .in_game img {
+  width: 7px;
+  height: 7px;
+}
+
+.room_row .infos .in_game h3 {
+  margin-left: 4px;
+  padding-top: 2px;
+  color: var(--red-color);
+  opacity: 1;
+}
+
+.room_row:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.room_row:active {
+  position: relative;
+  top: 2px;
+  right: 2px;
+
+  opacity: 1;
+  box-shadow: none;
+}

@@ -1,0 +1,12 @@
+:root {
+  --blue-color: #01daff;
+  --dark-blue-color: #00006c;
+  --yellow-color: #ffce00;
+  --red-color: #ff3601;
+  --green-color: #4fc329;
+  --light-white-color: #dcefff;
+
+  --control-shadow: -4px 4px rgba(0, 0, 0, 0.2);
+  --control-border: solid 4px var(--dark-blue-color);
+  --view-border: solid 8px var(--dark-blue-color);
+}

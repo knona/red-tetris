@@ -1,0 +1,11 @@
+@import url('../../css/variables.css');
+
+.scroll_view {
+  flex: 1 1 auto;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.scroll_view::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,56 @@
+@import url(../../css/variables.css);
+
+.box {
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: stretch;
+
+  background-color: var(--yellow-color);
+  border: var(--view-border);
+}
+
+.box_top_bar {
+  padding-bottom: 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 0;
+}
+
+.box_title {
+  padding-top: 4px;
+  padding-right: 16px;
+
+  color: var(--dark-blue-color);
+  font-family: Pixel;
+  font-size: 30px;
+}
+
+.box_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  scrollbar-width: none;
+}
+
+.box_content::-webkit-scrollbar {
+  display: none;
+}
+
+.box_content_scrollable {
+  overflow-y: scroll;
+
+  scrollbar-width: none;
+}
+
+.box_content_scrollable::-webkit-scrollbar {
+  display: none;
+}
