@@ -1,5 +1,8 @@
 # Red Tetris
 
+![tetris](./img/tetris.png)
+![tetris](./img/room.png)
+
 ## Introduction
 
 Red Tetris is a single and multiplayer Tetris game project at the 42 school. Players can create rooms to invite their friends to play Tetris. Players can send garbage lines to their opponent as they destroy their own ones. The last player to survive is the winner of the game.
@@ -89,3 +92,11 @@ To run the tests, use the following command at the root of the `client` or `serv
 ```bash
 npm run test:cov
 ```
+
+### Client results
+
+![client tests results](./img/client_tests.png)
+
+### Server results
+
+![server tests results](./img/server_tests.png)
