@@ -6,6 +6,7 @@
 ## Introduction
 
 Red Tetris is a single and multiplayer Tetris game project at the 42 school. Players can create rooms to invite their friends to play Tetris. Players can send garbage lines to their opponent as they destroy their own ones. The last player to survive is the winner of the game.
+You can play the game at: [https://red-tetris-bk.herokuapp.com/](https://red-tetris-bk.herokuapp.com/).
 
 ## Installation
 
