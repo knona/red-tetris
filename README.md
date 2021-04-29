@@ -11,7 +11,7 @@ You can install Red Tetris very easily by following these steps:
 1. Clone the repository:
 
 ```bash
-https://github.com/knona/red-tetris
+git clone https://github.com/knona/red-tetris
 ```
 
 2. At the project root, run the following command to start it:
