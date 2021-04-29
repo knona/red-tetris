@@ -10,7 +10,7 @@ const isProd: boolean = environment === 'production';
 
 async function bootstrap(): Promise<void> {
   const app: INestApplication = await NestFactory.create(AppModule, { logger: !isProd });
-  const cors: string[] = isProd ? [] : ['http://localhost:3000', 'https://hoppscotch.io'];
+  const cors: string[] = isProd ? ['https://red-tetris-bk.herokuapp.com/'] : ['http://localhost:3000', 'https://hoppscotch.io'];
   app.useWebSocketAdapter(new SocketIoAdapter(app, cors));
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   await app.listen(port);

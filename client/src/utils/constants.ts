@@ -28,6 +28,7 @@ export const PLAYFIELD_WIDTH: number = 10;
 export const PLAYFIELD_VISIBLE_HEIGHT: number = PLAYFIELD_HEIGHT - PLAYFIELD_BUFFER;
 export const EMPTY_PLAYFIELD: Playfield = newPlayfield();
 export const BACK_URL: string = 'localhost:5000';
+// export const BACK_URL: string = 'https://red-tetris-bk.herokuapp.com/';
 
 export const PIECE_BACKGROUND_COLOR: { [key in PieceType | '' | 'X']: Optional<string> } = {
   '': undefined,
