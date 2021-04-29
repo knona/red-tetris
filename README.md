@@ -44,9 +44,9 @@ Here are the Tetris commands:
 
 ## Technologies
 
-This project is made entirely using [Typescript](https://www.typescriptlang.org) wich dramatically improves Javascript.
+This project is made entirely using [Typescript](https://www.typescriptlang.org) which dramatically improves Javascript.
 
-The subject of the project require that the frontend should be made using functional programming. We've choosen to use [React Hooks](https://fr.reactjs.org/docs/hooks-intro.html) wich is perfectly adapted for this case. It also uses [Redux](https://redux.js.org) for the data management and take advantage of the [Redux Toolkit](https://redux-toolkit.js.org) library that improves Redux. Finally, we've decided to include [RxJS](https://rxjs-dev.firebaseapp.com) to take advantage of its powerful observable pattern.
+The subject of the project require that the frontend should be made using functional programming. We've choosen to use [React Hooks](https://fr.reactjs.org/docs/hooks-intro.html) which is perfectly adapted for this case. It also uses [Redux](https://redux.js.org) for the data management and take advantage of the [Redux Toolkit](https://redux-toolkit.js.org) library that improves Redux. Finally, we've decided to include [RxJS](https://rxjs-dev.firebaseapp.com) to take advantage of its powerful observable pattern.
 
 The backend part is made using Object Oriented Programing. It is made using [NestJS](https://nestjs.com) that made events handling from the frontend very easy. It only uses [socket.io](https://socket.io) to communicate with the frontend.
 
