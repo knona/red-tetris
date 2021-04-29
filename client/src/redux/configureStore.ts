@@ -15,7 +15,7 @@ export function createStore(preloadedState?: StoreState): Store<StoreState, AnyA
   const rootEpic: any = combineEpics(roomsEpic, playerEpic, tetrisEpic);
   const store: Store<StoreState, AnyAction> = configureStore({
     reducer: { player: playerReducer, rooms: roomsReducer, tetris: tetrisReducer },
-    devTools: true,
+    devTools: false,
     middleware: [ObservableActionsMiddleware, epicMiddleware],
     preloadedState: preloadedState
   });
