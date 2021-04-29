@@ -25,7 +25,7 @@ npm start
 ## How to play
 
 1. Create your username and click `Play`.
-2. Create a room by click `New` and choose its name. You can invite your friends to play by sharing them the url. But you can also play solo.
+2. Create a room by clicking `New` and choose its name. You can invite your friends to play by sharing them the url. But you can also play solo.
 3. Click `Start` to start the game.
 
 Here are the Tetris commands:
@@ -44,9 +44,9 @@ Here are the Tetris commands:
 
 ## Technologies
 
-This project is made entirely using [Typescript](https://www.typescriptlang.org) witch dramatically improves Javascript.
+This project is made entirely using [Typescript](https://www.typescriptlang.org) wich dramatically improves Javascript.
 
-The subject of the project require that the frontend should be made using functional programming. We've choosen to use [React Hooks](https://fr.reactjs.org/docs/hooks-intro.html) witch is perfectly adapted for this case. It also uses [Redux](https://redux.js.org) for the data management and take advantage of the [Redux Toolkit](https://redux-toolkit.js.org) library that improves Redux. Finally, we've decided to include [RxJS](https://rxjs-dev.firebaseapp.com) to take advantage of its powerful observable pattern.
+The subject of the project require that the frontend should be made using functional programming. We've choosen to use [React Hooks](https://fr.reactjs.org/docs/hooks-intro.html) wich is perfectly adapted for this case. It also uses [Redux](https://redux.js.org) for the data management and take advantage of the [Redux Toolkit](https://redux-toolkit.js.org) library that improves Redux. Finally, we've decided to include [RxJS](https://rxjs-dev.firebaseapp.com) to take advantage of its powerful observable pattern.
 
 The backend part is made using Object Oriented Programing. It is made using [NestJS](https://nestjs.com) that made events handling from the frontend very easy. It only uses [socket.io](https://socket.io) to communicate with the frontend.
 
