@@ -25,6 +25,9 @@ export function RoomObserver(props: RoomObserverProps): Component {
       if (props.actions.includes(RoomObserverAction.playerRemovedFromRoom)) {
         dispatch(roomsEpicActions.observePlayerRemovedFromRoom({ roomId: props.roomId, willUnmount$ }));
       }
+      if (props.actions.includes(RoomObserverAction.managerChanged)) {
+        dispatch(roomsEpicActions.observeRoomManagerChanges({ roomId: props.roomId, willUnmount$ }));
+      }
       if (props.actions.includes(RoomObserverAction.roomGameStart)) {
         dispatch(roomsEpicActions.observeRoomGameStart({ roomId: props.roomId, willUnmount$ }));
       }

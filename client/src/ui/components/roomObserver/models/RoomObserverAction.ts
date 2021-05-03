@@ -3,6 +3,7 @@ export enum RoomObserverAction {
   removedRoom = 'removedRoom',
   playerAddedToRoom = 'playerAddedToRoom',
   playerRemovedFromRoom = 'playerRemovedFromRoom',
+  managerChanged = 'managerChanged',
   roomGameStart = 'roomGameStart',
   roomGameOver = 'roomGameOver',
   roomGameEnd = 'roomGameEnd'

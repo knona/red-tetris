@@ -1,12 +1,9 @@
 import { History } from 'history';
-import { Dispatch, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
-import { AnyAction } from 'redux';
-import { Subject } from 'rxjs';
 import { GameStatus } from '../../../models/GameStatus';
 import { GamingRoom } from '../../../models/GamingRoom';
-import roomsEpicActions from '../../../redux/roomsStore/roomsEpicActions';
 import roomsSelectors from '../../../redux/roomsStore/roomsSelectors';
 import { StoreState } from '../../../redux/state';
 import { ClientEvent } from '../../../shared/Events';
@@ -26,7 +23,6 @@ interface RoomParams {
 
 export function RoomPage(props: RoomPageProps): Component {
   const history: History = useHistory();
-  const dispatch: Dispatch<AnyAction> = useDispatch();
   const { roomId }: RoomParams = useParams<RoomParams>();
   const room: Optional<GamingRoom> = useSelector((state: StoreState) => roomsSelectors.getRoomWithId(state, roomId));
   const gameStatus: Optional<GameStatus> = useSelector((state: StoreState) =>
@@ -34,20 +30,6 @@ export function RoomPage(props: RoomPageProps): Component {
   );
   const isManager: boolean = room?.managerId === props.player.id ?? false;
   const hasJoined: boolean = room?.players.some(player => player.id === props.player.id) ?? false;
-
-  useEffect(() => {
-    const willUnmount$: Subject<void> = new Subject();
-    dispatch(roomsEpicActions.getRoom({ roomId: roomId }));
-    dispatch(roomsEpicActions.observePlayerAddedToRoom({ roomId: roomId, willUnmount$ }));
-    dispatch(roomsEpicActions.observePlayerRemovedFromRoom({ roomId: roomId, willUnmount$ }));
-    dispatch(roomsEpicActions.observeRemovedRoom({ roomId: roomId, willUnmount$ }));
-    dispatch(roomsEpicActions.observeRoomManagerChanges({ roomId: roomId, willUnmount$ }));
-    dispatch(roomsEpicActions.observeRoomGameStart({ roomId: roomId, willUnmount$ }));
-    return (): void => {
-      willUnmount$.next();
-      willUnmount$.complete();
-    };
-  }, []);
 
   useEffect(() => {
     if (gameStatus === GameStatus.started && hasJoined) {
