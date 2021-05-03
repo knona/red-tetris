@@ -1,13 +1,12 @@
+import { History } from 'history';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
-import { AnyAction, Dispatch } from 'redux';
 import { Subject } from 'rxjs';
 import { filter, takeUntil, tap } from 'rxjs/operators';
 import { GamingRoom } from '../../../models/GamingRoom';
 import { Piece } from '../../../models/Piece';
 import { Player } from '../../../models/Player';
-import roomsEpicActions from '../../../redux/roomsStore/roomsEpicActions';
 import roomsSelectors from '../../../redux/roomsStore/roomsSelectors';
 import { StoreState } from '../../../redux/state';
 import tetrisSelectors from '../../../redux/tetrisStore/tetrisSelectors';
@@ -29,7 +28,6 @@ import { GamePageProps } from './GamePageProps';
 import { OpponentGame } from './OpponentGame/OpponentGame';
 import { PlayerGame } from './PlayerGame/PlayerGame';
 import { Score } from './Score/Score';
-import { History } from 'history';
 
 interface GameParams {
   gameId: string;
@@ -49,7 +47,6 @@ export function GamePage(props: GamePageProps): Component {
   const heldPiece: Optional<Piece> = useSelector(tetrisSelectors.getHeldPiece);
   const [componentState, setComponentState]: State<ComponentState> = useState<ComponentState>(ComponentState.countdown);
   const [canStartGame, setCanStartGame]: State<boolean> = useState<boolean>(false);
-  const dispatch: Dispatch<AnyAction> = useDispatch();
   const history: History = useHistory();
 
   useEffect(() => {
@@ -57,16 +54,6 @@ export function GamePage(props: GamePageProps): Component {
       history.replace('/rooms');
       return;
     }
-    const willUnmount$: Subject<void> = new Subject();
-    dispatch(roomsEpicActions.observeAddedRoom({ willUnmount$ }));
-    dispatch(roomsEpicActions.observeRemovedRoom({ willUnmount$ }));
-    dispatch(roomsEpicActions.observeRoomGameStart({ roomId: room.id, willUnmount$ }));
-    dispatch(roomsEpicActions.observeRoomGameOver({ roomId: room.id, willUnmount$ }));
-    dispatch(roomsEpicActions.observeRoomGameEnd({ roomId: room.id, willUnmount$ }));
-    return (): void => {
-      willUnmount$.next();
-      willUnmount$.complete();
-    };
   }, [room]);
 
   useEffect(() => {
@@ -128,7 +115,7 @@ export function GamePage(props: GamePageProps): Component {
     if (!room) {
       return <Empty />;
     }
-    const opponents: Player[] = room.players.filter(player => player.id !== props.player.id);
+    const opponents: Player[] = room.game.players.filter(player => player.id !== props.player.id);
     const playerExists: boolean = playerIndex < opponents.length;
     if (playerExists) {
       const player: Player = opponents[playerIndex];

@@ -13,6 +13,8 @@ import { ClientEvent } from '../../../shared/Events';
 import { emit$ } from '../../../shared/Socket';
 import { Component, Optional } from '../../../shared/Types';
 import { Empty } from '../../components/empty/Empty';
+import { AllRoomObserverAction } from '../../components/roomObserver/models/RoomObserverAction';
+import { RoomObserver } from '../../components/roomObserver/RoomObserver';
 import { RoomCommands } from './roomCommands/RoomCommands';
 import './RoomPage.css';
 import { RoomPageProps } from './RoomPageProps';
@@ -82,21 +84,23 @@ export function RoomPage(props: RoomPageProps): Component {
   }
 
   return (
-    <div className="room_page">
-      {room ? (
-        <div className="room_container">
-          <div className="room">
-            <div className="player_list">
-              <RoomPlayers room={room} />
-            </div>
-            <div className="commands">
-              <RoomCommands room={room} isManager={isManager} hasJoined={hasJoined} />
+    <RoomObserver roomId={roomId} actions={AllRoomObserverAction}>
+      <div className="room_page">
+        {room ? (
+          <div className="room_container">
+            <div className="room">
+              <div className="player_list">
+                <RoomPlayers room={room} />
+              </div>
+              <div className="commands">
+                <RoomCommands room={room} isManager={isManager} hasJoined={hasJoined} />
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <Empty />
-      )}
-    </div>
+        ) : (
+          <Empty />
+        )}
+      </div>
+    </RoomObserver>
   );
 }

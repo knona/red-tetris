@@ -1,6 +1,5 @@
 import { History } from 'history';
-import { useState } from 'react';
-import { Dispatch, useEffect } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { AnyAction } from 'redux';
@@ -33,9 +32,6 @@ export function RoomList(): Component {
     (dispatch as DispatchObserve)(roomsEpicActions.getRooms()).subscribe({
       error: () => setCurrentState(ComponentState.failedToFetchRooms)
     });
-    dispatch(roomsEpicActions.observeAddedRoom({ willUnmount$ }));
-    dispatch(roomsEpicActions.observeRemovedRoom({ willUnmount$ }));
-
     return (): void => {
       willUnmount$.next();
       willUnmount$.complete();

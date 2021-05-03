@@ -15,8 +15,6 @@ export function WaitingRoom(props: WaitingRoomProps): Component {
   useEffect(() => {
     const willUnmount$: Subject<void> = new Subject();
     dispatch(roomsEpicActions.getRoom({ roomId: props.waitingRoom.id }));
-    dispatch(roomsEpicActions.observePlayerAddedToRoom({ roomId: props.waitingRoom.id, willUnmount$ }));
-    dispatch(roomsEpicActions.observePlayerRemovedFromRoom({ roomId: props.waitingRoom.id, willUnmount$ }));
     return (): void => {
       willUnmount$.next();
       willUnmount$.complete();

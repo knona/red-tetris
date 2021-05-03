@@ -8,20 +8,20 @@ import { mergeMap } from 'rxjs/operators';
 import { Player } from '../../../models/Player';
 import { Room } from '../../../models/Room';
 import { DispatchObserve } from '../../../redux/observableActions';
+import playerSelectors from '../../../redux/playerStore/playerSelectors';
 import roomsEpicActions from '../../../redux/roomsStore/roomsEpicActions';
 import roomsSelectors from '../../../redux/roomsStore/roomsSelectors';
-import playerSelectors from '../../../redux/playerStore/playerSelectors';
 import { ClientEvent } from '../../../shared/Events';
 import { emit$, isConnected$ } from '../../../shared/Socket';
 import { Component, Optional } from '../../../shared/Types';
 import { DisconnectedPage } from '../disconnected/DisconnectedPage';
+import { GamePage } from '../game/GamePage';
 import { MissingRoomPage } from '../missingRoom/MissingRoomPage';
 import { OnboardingPage } from '../onboarding/OnboardingPage';
 import { PlayerCreationPage } from '../playerCreation/PlayerCreationPage';
 import { RoomPage } from '../room/RoomPage';
 import { RoomCreationPage } from '../roomCreation/RoomCreationPage';
 import { RoomsPage } from '../rooms/RoomsPage';
-import { GamePage } from '../game/GamePage';
 
 export function AppNavigation(): Component {
   const player: Optional<Player> = useSelector(playerSelectors.getPlayer);
