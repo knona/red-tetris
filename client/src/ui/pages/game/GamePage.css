@@ -21,10 +21,10 @@
   grid-template-areas:
     '.   sc sc .  '
     'hd  pg pg qe '
-    'og0 pg pg og2'
-    'og0 pg pg og2'
-    'og1 pg pg og3'
-    'og1 pg pg og3';
+    'og0 pg pg og1'
+    'og0 pg pg og1'
+    'og2 pg pg og3'
+    'og2 pg pg og3';
   grid-template-rows: min-content min-content repeat(4, 1fr);
 }
 
