@@ -41,7 +41,7 @@ export function RoomCommands(props: RoomCommandsProps): Component {
   );
 
   useEffect(() => {
-    if (gameStatus === GameStatus.started && !props.hasJoined) {
+    if (gameStatus === GameStatus.started) {
       setComponentState(ComponentState.waitingForGameToFinish);
     } else {
       setComponentState(ComponentState.waitingForCommand);
