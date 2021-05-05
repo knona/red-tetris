@@ -73,15 +73,9 @@ export class SocketService {
     this._server.to(players.map(player => player.socketId)).emit('next_pieces', { room: { id: roomId }, pieces });
   }
 
-  public updatePlayerGame(
-    player: Player,
-    players: Player[],
-    roomId: string,
-    piece?: Piece,
-    playfield?: Playfield
-  ): void {
+  public updatePlayerGame(player: Player, roomId: string, piece?: Piece, playfield?: Playfield): void {
     this._server
-      .to(players.map(roomPlayer => roomPlayer.socketId))
+      .to(roomId)
       .except(player.socketId)
       .emit('update_player_game', {
         room: { id: roomId },
