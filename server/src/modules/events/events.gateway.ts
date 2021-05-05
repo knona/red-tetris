@@ -14,7 +14,6 @@ import { Room } from 'src/modules/events/models/Room';
 import { PlayerSocket } from 'src/modules/events/utils/player-socket.type';
 import { ConnectedGuard } from './authentification/connected.guard';
 import { NotConnected } from './authentification/not-connected.decorator';
-import { Public } from './authentification/public.decorator';
 import { EventExceptionsFilter } from './exceptions/event-exceptions.filter';
 import { EventException } from './exceptions/event.exception';
 import { GameService } from './game.service';
@@ -71,13 +70,6 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
     } else {
       this._logger.log(`Client disconnected: ${client.id}`);
     }
-  }
-
-  @EventRoute(':test')
-  @Public()
-  public test(@MessageBody() data: { message: string }): { incoming: typeof data } {
-    this._logger.log('Test message: ' + data.message, ':test');
-    return { incoming: data };
   }
 
   @EventRoute(':connection')

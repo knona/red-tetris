@@ -49,14 +49,6 @@ describe('Events Gateway', () => {
     socket.disconnect();
   });
 
-  describe(':test', () => {
-    it('should return the same message emitted', async () => {
-      const dataToSend = { message: 'hello' };
-      const response = await emit(socket, ':test', dataToSend);
-      expect(response).toStrictEqual({ incoming: dataToSend });
-    });
-  });
-
   describe(':connection', () => {
     it('should not work if username length < 3', async () => {
       await expect(emit(socket, ':connection', { username: 'ha' })).rejects.toBeTruthy();
