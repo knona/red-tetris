@@ -6,6 +6,7 @@ import { GameStatus } from '../../../models/GameStatus';
 import { GamingRoom } from '../../../models/GamingRoom';
 import roomsSelectors from '../../../redux/roomsStore/roomsSelectors';
 import { StoreState } from '../../../redux/state';
+import tetrisSelectors from '../../../redux/tetrisStore/tetrisSelectors';
 import { ClientEvent } from '../../../shared/Events';
 import { emit$ } from '../../../shared/Socket';
 import { Component, Optional } from '../../../shared/Types';
@@ -28,11 +29,12 @@ export function RoomPage(props: RoomPageProps): Component {
   const gameStatus: Optional<GameStatus> = useSelector((state: StoreState) =>
     roomsSelectors.getRoomGameStatus(state, roomId)
   );
+  const isGameOver: boolean = useSelector(tetrisSelectors.getIsGameOver);
   const isManager: boolean = room?.managerId === props.player.id ?? false;
   const hasJoined: boolean = room?.players.some(player => player.id === props.player.id) ?? false;
 
   useEffect(() => {
-    if (gameStatus === GameStatus.started && hasJoined) {
+    if (gameStatus === GameStatus.started && hasJoined && !isGameOver) {
       history.push(`/game/${roomId}`);
     }
   }, [room, gameStatus]);
