@@ -50,6 +50,9 @@ export class GameService {
     if (!room) {
       return;
     }
+    if (!room.game.alives.some(alivePlayer => alivePlayer.id === player.id)) {
+      throw new EventException('Player is not alive');
+    }
     room.game.gameOver(player.id);
     this.socketService.gameOver(player, room);
     if (room.game.checkEnd()) {
@@ -62,7 +65,7 @@ export class GameService {
     if (!room) {
       return;
     }
-    this.socketService.updatePlayerGame(player, room.game.alives, room.id, piece, playfield);
+    this.socketService.updatePlayerGame(player, room.id, piece, playfield);
     if (deletedLines !== undefined && deletedLines >= 2) {
       this.socketService.attack(player, room.game.alives, room.id, deletedLines - 1);
     }
