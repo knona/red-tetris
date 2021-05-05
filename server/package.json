@@ -75,6 +75,10 @@
     },
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "main.ts",
+      "socket-io.adapter.ts"
     ]
   }
 }
